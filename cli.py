@@ -17,17 +17,16 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 notify = Notify()
-wait_time_s = 60
 url = "https://www.cafebesalu.com/app/store/api/v8/editor/users/125614995/sites/725420366501505624/store-locations/11e97377b326f4d1a5ad0cc47a2b63e4/products?page=1&per_page=200&has_categories=1"
 # Default items to track
-watched_names = ['Ham & Swiss Pastry', 'Fruit Danish', 'Pain au Chocolat', 'Onion & Gruyere', 'Almond Croissant']
+# watched_names = ['Ham & Swiss Pastry', 'Fruit Danish', 'Pain au Chocolat', 'Onion & Gruyere', 'Almond Croissant']
 
 @click.group()
 def cli():
     pass
 
-@cli.command()
-def list_items():
+@cli.command('list')
+def list_items():        
     response = requests.get(url)
     data = response.json()['data']
     for item in data:
