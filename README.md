@@ -1,4 +1,5 @@
 # Besalu Notifier
+A tool to watch the inventory of Cafe Besalu in Seattle, WA.
 
 ## Installation 
 ```
